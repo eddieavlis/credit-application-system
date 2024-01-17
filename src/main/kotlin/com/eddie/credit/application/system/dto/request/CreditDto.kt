@@ -1,4 +1,4 @@
-package com.eddie.credit.application.system.dto
+package com.eddie.credit.application.system.dto.request
 
 import com.eddie.credit.application.system.entity.Credit
 import com.eddie.credit.application.system.entity.Customer
@@ -11,15 +11,14 @@ import java.time.LocalDate
 
 data class CreditDto(
     @field:NotNull(message = "Invalid input") val creditValue: BigDecimal,
-    @field:Future val dayFirstOfInstallment: LocalDate,
+    @field:Future val dayFirstInstallment: LocalDate,
     @field:Min(value = 1) @field:Max(value = 48) val numberOfInstallments: Int,
-    @field:NotNull(message = "Invalid input") val customerId: Long
+    val customerId: Long
 ) {
-
     fun toEntity(): Credit = Credit(
         creditValue = this.creditValue,
-        dayFirstInstallment = this.dayFirstOfInstallment,
         numberOfInstallments = this.numberOfInstallments,
-        customer = Customer(id = this.customerId)
+        customer = Customer(id = this.customerId),
+        dayFirstInstallment = dayFirstInstallment
     )
 }
