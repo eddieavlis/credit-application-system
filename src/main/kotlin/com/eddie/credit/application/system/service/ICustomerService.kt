@@ -1,31 +1,9 @@
-package com.eddie.credit.application.system.service.impl
+package com.eddie.credit.application.system.service
 
 import com.eddie.credit.application.system.entity.Customer
-import com.eddie.credit.application.system.exception.BusinessException
-import com.eddie.credit.application.system.repository.CustomerRepository
-import com.eddie.credit.application.system.service.ICustomerService
-import org.springframework.stereotype.Service
 
-@Service
-class CustomerService(
-    private val customerRepository: CustomerRepository
-): ICustomerService {
-    override fun save(customer: Customer): Customer = this.customerRepository.save(customer)
-
-    override fun findById(id: Long): Customer = this.customerRepository.findById(id)
-        .orElseThrow{throw BusinessException("Id $id not found") }
-
-    override fun delete(id: Long) {
-        val customer: Customer = this.findById(id)
-        this.customerRepository.delete(customer)
-    }
-
-    fun updateCustomer(id: Long, updatedCustomer: Customer): Customer {
-        val existingCustomer: Customer = findById(id)
-
-        existingCustomer.firstName = updatedCustomer.firstName
-        existingCustomer.lastName = updatedCustomer.lastName
-
-        return save(existingCustomer)
-    }
+interface ICustomerService {
+    fun save(customer: Customer): Customer
+    fun findById(id: Long): Customer
+    fun delete(id: Long)
 }
