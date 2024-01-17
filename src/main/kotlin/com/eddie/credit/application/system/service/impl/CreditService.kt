@@ -36,7 +36,7 @@ class CreditService(
         }*/
     }
 
-    private fun validDayFirstInstallment(dayFirstInstallment: LocalDate): Boolean {
+    fun validDayFirstInstallment(dayFirstInstallment: LocalDate): Boolean {
         return if (dayFirstInstallment.isBefore(LocalDate.now().plusMonths(3))) true
         else throw BusinessException("Invalid Date")
     }
