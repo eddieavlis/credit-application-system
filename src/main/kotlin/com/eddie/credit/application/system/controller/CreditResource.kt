@@ -1,11 +1,11 @@
 package com.eddie.credit.application.system.controller
 
-import com.eddie.credit.application.system.dto.CreditDto
-import com.eddie.credit.application.system.dto.CreditView
-import com.eddie.credit.application.system.dto.CreditViewList
+import jakarta.validation.Valid
+import com.eddie.credit.application.system.dto.request.CreditDto
+import com.eddie.credit.application.system.dto.response.CreditView
+import com.eddie.credit.application.system.dto.response.CreditViewList
 import com.eddie.credit.application.system.entity.Credit
 import com.eddie.credit.application.system.service.impl.CreditService
-import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -43,5 +43,4 @@ class CreditResource(
         val credit: Credit = this.creditService.findByCreditCode(customerId, creditCode)
         return ResponseEntity.status(HttpStatus.OK).body(CreditView(credit))
     }
-
 }
