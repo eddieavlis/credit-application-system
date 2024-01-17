@@ -1,4 +1,4 @@
-package com.eddie.credit.application.system.dto
+package com.eddie.credit.application.system.dto.response
 
 import com.eddie.credit.application.system.entity.Credit
 import java.math.BigDecimal
