@@ -21,5 +21,4 @@ data class CreditView(
         emailCustomer = credit.customer?.email,
         incomeCustomer = credit.customer?.income
     )
-
 }

@@ -1,0 +1,10 @@
+spring.datasource.url=jdbc:h2:mem:credit_application_system_db
+spring.datasource.username=eddie
+spring.datasource.password=1234
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.initialization-mode=always
+
+spring.jpa.show-sql=true
+spring.jpa.proporties.hibernate.format_sql=true
+
+spring.flyway.anabled=false

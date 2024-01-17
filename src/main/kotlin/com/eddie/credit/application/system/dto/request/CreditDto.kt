@@ -22,5 +22,4 @@ data class CreditDto(
         numberOfInstallments = this.numberOfInstallments,
         customer = Customer(id = this.customerId)
     )
-
 }

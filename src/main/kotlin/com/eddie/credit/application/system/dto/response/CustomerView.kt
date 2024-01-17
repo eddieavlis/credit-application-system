@@ -21,5 +21,4 @@ data class CustomerView(
         zipCode = customer.address.zipCode,
         street = customer.address.street
     )
-
 }

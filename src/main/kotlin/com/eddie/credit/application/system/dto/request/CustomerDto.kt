@@ -33,5 +33,4 @@ data class CustomerDto(
             street = this.street
         )
     )
-
 }

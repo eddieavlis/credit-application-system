@@ -20,5 +20,4 @@ data class CustomerUpdateDto(
         customer.address.zipCode = this.zipCode
         return customer
     }
-
 }
