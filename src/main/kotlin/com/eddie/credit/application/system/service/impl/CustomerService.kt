@@ -20,4 +20,12 @@ class CustomerService(
         this.customerRepository.delete(customer)
     }
 
+    fun updateCustomer(id: Long, updatedCustomer: Customer): Customer {
+        val existingCustomer: Customer = findById(id)
+
+        existingCustomer.firstName = updatedCustomer.firstName
+        existingCustomer.lastName = updatedCustomer.lastName
+
+        return save(existingCustomer)
+    }
 }
