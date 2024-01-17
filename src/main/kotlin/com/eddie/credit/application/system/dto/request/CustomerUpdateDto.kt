@@ -1,4 +1,4 @@
-package com.eddie.credit.application.system.dto
+package com.eddie.credit.application.system.dto.request
 
 import com.eddie.credit.application.system.entity.Customer
 import jakarta.validation.constraints.NotEmpty
