@@ -4,7 +4,7 @@ CREATE TABLE credit (
    credit_value DECIMAL NOT NULL,
    day_first_installment date NOT NULL,
    number_of_installments INT NOT NULL,
-   status SMALLINT,
+   status VARCHAR(20),
    customer_id BIGINT,
    CONSTRAINT pk_credit PRIMARY KEY (id)
 );
