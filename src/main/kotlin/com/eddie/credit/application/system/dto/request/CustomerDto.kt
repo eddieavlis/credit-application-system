@@ -1,4 +1,4 @@
-package com.eddie.credit.application.system.dto
+package com.eddie.credit.application.system.dto.request
 
 import com.eddie.credit.application.system.entity.Address
 import com.eddie.credit.application.system.entity.Customer
